@@ -2,12 +2,13 @@ package com.example.user.accesscontactinfo;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(tableName = "contacts")
+@Entity(tableName = "contacts",indices = {@Index(value = {"contact_no"},unique = true)})
 public class Contacts {
 
     @PrimaryKey(autoGenerate = true)
